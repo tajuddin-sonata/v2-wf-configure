@@ -69,7 +69,7 @@ from datetime import datetime
 from typing import Any
 from ciso8601 import parse_datetime
 from json import dumps, loads
-from jsonschema import validate, ValidationError
+# from jsonschema import validate, ValidationError
 
 
 def jsonify(obj):

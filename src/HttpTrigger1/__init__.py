@@ -38,11 +38,9 @@ storage_client = BlobServiceClient.from_connection_string(connection_string)
 
 time_cold_start = time() - start_time
 
-app = func.FunctionApp(http_auth_level=func.AuthLevel.FUNCTION)
+def main(req: func.HttpRequest) -> func.HttpResponse:
+    logging.info('HTTP trigger function processed a request.')
 
-@app.route(route="wf_configure_HttpTrigger")
-def wf_configure_HttpTrigger(req: func.HttpRequest) -> func.HttpResponse:
-    logging.info('Python HTTP trigger function processed a request.')
 
     """HTTP Cloud Function.
     Args:
